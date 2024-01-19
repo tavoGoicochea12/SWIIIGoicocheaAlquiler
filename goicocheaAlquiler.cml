@@ -1,0 +1,33 @@
+ContextMap Estacinamiento {
+    contains GestionVehiculos
+  
+    contains GestionClientes 
+  
+
+    GestionVehiculos [SK]<->[SK] GestionClientes
+}
+
+BoundedContext GestionVehiculos {
+    Module catalogo {
+       
+
+        Aggregate GestionVehiculos  {
+            Entity Vehiculo
+            ValueObject DetallesVehiculo
+           
+        }
+    }
+}
+
+
+
+
+BoundedContext GestionClientes {
+    Module clientes {        
+        Aggregate GestionClientes  {
+            Entity Cliente
+            ValueObject DetallesCliente
+        }
+    }
+}
+
